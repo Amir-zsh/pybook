@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>|pb| Profile</title>
+<link rel="shortcut icon" href="Logo.gif">
+<style type="text/css" media="screen" >
+body{
+	background-color: #333;
+}
+a:link , a:visited{
+	color:#FFF;
+	text-decoration: none;
+}
+a:hover, a:active, a:focus {
+	text-decoration: none;
+}
+.container{
+	width: 1000px;
+	height: auto;
+}
+.header{
+	width: 1000px;
+	height: 140px;
+	background-image:url(Header.gif);
+	background-size: 100% 140px;
+	float:left;
+}
+.headerMenu{
+	width: 920px;
+	height: 40px;
+	float: left;
+	padding-left: 40px;
+	padding-right: 40px;
+	background-image:url(HeaderMenu1.gif);
+	background-size: 100% 40px;
+}
+.pybookName{
+	width: auto;
+	height: 40px;
+	float: left;
+}
+.headerSubMenu{
+	width: auto;
+	height: 20px;
+	float: right;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-family:"Times New Roman", Times, serif;
+}
+.headerSearch{
+	width: auto;
+	height: 20px;
+	float: left;
+	padding-left: 40px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-family:"Times New Roman", Times, serif;
+}
+.sidebarTopics{
+	width: 200px;
+	height: auto;
+	float: left;
+}
+td.topic{
+	background-size: 100% 100%;
+	text-align: center;
+	font-family:"Times New Roman", Times, serif;
+	color: #FFF;
+	border-collapse: separate;
+}
+.content{
+	width: 750px;
+	height: auto;
+	float: right;
+	padding: 10px;
+}
+.picture{
+	border-style:inset;
+	border-color:#FFF;
+	width: 250px;
+	height: 250px;
+	float: left;
+	background-image: url(Logo.gif);
+	background-size: 250px 250px;
+}
+.identification{
+	width: 450px;
+	height: auto;
+	float: right;
+}
+h1,p{color: #FFF;}
+</style>
+</head>
+
+<body>
+<div class="container">
+<div class="header"></div>
+<div class="headerMenu"><div class="pybookName"><a href="login.html" title="Main Page" target="_blank"><img src="pybookName.gif" width="118" height="40"></a></div>
+<div class="headerSearch"><input name="search" type="image" title="Search" src="search.png" alt="search">&nbsp;<input name="SearchValue" type="text" title="find ..." value="find your friends ..." onClick=value=""></div>
+<div class="headerSubMenu"><a href="Profile.html" title="Profile">Profile</a> | <a href="#" title="Your Wall">Your Wall</a> | <a href="#" title="Topics">Topics</a> | <a href="#" title="Log Out">Log Out</a></div>
+</div>
+<table class="sidebarTopics">
+<caption style="color: #FFF;"><a href="#">Topics</a></caption>
+<tr><td class="topic" width="200px" height="40px" style="background-image:url(Basic.gif);"
+><a href="#" title="basic">basic</a></td></tr>
+<tr><td class="topic" width="200px" height="40px"  style="background-image:url(django.gif);"><a href="#" title="django">django</a></td></tr>
+<tr><td class="topic" width="200px" height="40px" style="background-image:url(pygame.gif);"><a href="#" title="pygame">pygame</a></td></tr>
+<tr><td class="topic" width="200px" height="40px" style="background-image: url(multi-threading.gif);"><a href="#" title="multi threading">multi threading</a></td></tr></table>
+<div class="content"><div class="picture" title="change your profile picture"><input type="file" accept="image/*" title="profile picture"></div><div class="identification">
+<h1>Profile</h1><hr width="100%" color="#FFFFFF"><br><p>Name :<hr width="75%" color="#CCCCCC"></p><p><br>Username :<hr width="75%" color="#CCCCCC"></p><p><br>Email :<hr width="75%" color="#CCCCCC"></p><p><br>BirthDay :</p><br>
+<a href="#"><input type="image" src="ChangeButton.gif" width="100px" height="20px"></a></div></div>
+</div>
+</body>
+</html>
