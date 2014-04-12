@@ -19,7 +19,7 @@ def user_log_in(request):
     if user is not None:
         if user.is_active:
             login(request, user)
-            return HttpResponseRedirect(reverse('main:wall', args=(username,)))
+            return HttpResponseRedirect(reverse('main:profile', args=(username,)))
     else:
         return render(request, 'log_in/login.html', {'error_message': "username or password is invalid.",})
         
@@ -42,6 +42,5 @@ def user_sign_up(request):
     user = authenticate(username=user_name, password=password)
     login(request,user)
     return HttpResponseRedirect(reverse('main:profile', args=(user.username,)))
-def log_out(request):
-    pass
+
             
