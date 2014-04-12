@@ -1,5 +1,5 @@
 """
-Django settings for Post project.
+Django settings for Pybook project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -26,6 +26,7 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 AUTH_PROFILE_MODULE = 'accounts.UserProfile'
+LOGIN_URL='/log_in/'
 
 
 # Application definition
@@ -54,9 +55,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'Post.urls'
+ROOT_URLCONF = 'Pybook.urls'
 
-WSGI_APPLICATION = 'Post.wsgi.application'
+WSGI_APPLICATION = 'Pybook.wsgi.application'
 
 
 # Database
