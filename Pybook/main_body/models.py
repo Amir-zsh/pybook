@@ -36,7 +36,11 @@ class Private_message(models.Model):
     
 class Follow(models.Model):
     follower=models.ForeignKey(User,related_name='follower')
+<<<<<<< HEAD
     following=models.ForeignKey(User,related_name='following')
+=======
+    following=models.Foreignkey(User,related_name='following')
+>>>>>>> 74be6f6bdb4c9971e09b84b08c1712bbaf302568
     
     
     
