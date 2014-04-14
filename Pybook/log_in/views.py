@@ -5,6 +5,7 @@ from django.core.urlresolvers import reverse
 from django.views import generic
 from accounts.models import UserProfile
 from django.contrib.auth.models import User
+from mail_validity import valid_mail
 # from django.template import RequestContext, loader
 
 def log_in_view(request):
