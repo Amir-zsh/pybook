@@ -7,7 +7,8 @@ class UserProfile(models.Model):
 	user = models.OneToOneField(User, unique=True, related_name='profile')
 	first_name=models.CharField(blank=True,max_length=30)
 	last_name=models.CharField(blank=True,max_length=30)
-#	birth_day= models.DateTimeField(blank=True)
+	birth_day= models.DateTimeField(blank=True)
+	following=models.ForeignKey(User,related_name='follower')
 	photo=models.ImageField(blank=True,upload_to='photos')
 	status=models.TextField(blank=True)
 	def __unicode__(self):
