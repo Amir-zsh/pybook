@@ -25,6 +25,7 @@ class Comment(models.Model):
     likes=models.IntegerField(default=0)
     def __unicode__(self):
         return pub_date
+    
 class Private_message(models.Model):
     author=models.ForeignKey(User,related_name='sent_pm')
     pub_date=models.DateTimeField(default=timezone.now())
@@ -32,7 +33,9 @@ class Private_message(models.Model):
     receiver=models.ForeignKey(User,related_name='recivied_pm')
     def __unicode__(self):
         return pud_date
+    
 
+    
     
     
     

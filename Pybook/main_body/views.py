@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from accounts.models import UserProfile
 
 # @login_required
 def wall_view(request):
@@ -36,7 +37,7 @@ def message_view(reques,user_name):
     else:
         return HttpResponseRedirect(reverse('index:login', ))
 
-def submit_chnages(requst):
+def submit_changes(requst):
     password=request.POST['new_password']
     email=request.POST['email']
     photo=request.POST['photo']
@@ -61,6 +62,19 @@ def log_out(request):
     logout(request)
     return HttpResponseRedirect(reverse('log_out',))
 
+def search_users(request):
+    all_users=UserProfile.objects.all()                             
+    searched_name=request.Post['searched_name']                 #The name that a user may search
+    searched_first=searched_name.split()[0]                     #We devided the name to first name and last name
+    searched_last=searched_name.split()[1]
+    most_relevant=[]                                            #It's created to get all the most relevant searches
+    for i in range(len(all_users)):
+        if all_users[i].first_name==searched_first and all_users[i].last_name==searched_last:
+            most_relevant.append[all_users[i]]
+    if len(most_relevant)>0:
+        return render(request, 'main/search.html',{'most_relevant':most_relevant})
+    else:
+        pass
 
     
     
