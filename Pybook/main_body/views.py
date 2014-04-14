@@ -71,10 +71,8 @@ def search_users(request):
     for i in range(len(all_users)):
         if all_users[i].first_name==searched_first and all_users[i].last_name==searched_last:
             most_relevant.append[all_users[i]]
-    if len(most_relevant)>0:
-        return render(request, 'main/search.html',{'most_relevant':most_relevant})
-    else:
-        pass
+    return render(request, 'main/search.html',{'most_relevant':most_relevant})
+
 
     
     
