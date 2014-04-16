@@ -17,10 +17,10 @@
 <input class="headerSearchText" type="text" placeholder="Search your friends ...">
 </div>
 <div class="headerMenu">
-<ul><li><a href="{% url 'main:Profile' user.username %}">Profile</a></li>
+<ul><li><a href="{% url 'main:Profile' %}">Profile</a></li>
 <li><a href="{% url 'main:Your_Wall' user.username %}">Your Wall</a></li>
 <li><a href="{% url 'main:Message' %}">Message</a></li>
-<li><a href="{% url 'main:News' user.username %}">News</a></li>
+<li><a href="{% url 'main:News' %}">News</a></li>
 <li><a href="{% url 'main:Topics' %}">Topics</a></li>
 <li><a href="{% url 'LogIn' %}">Log Out</a></li></ul>
 </div>
@@ -462,10 +462,10 @@ Topics
 </div>
 </div>
 <div class="sidebar">
-<a href="{% url 'main:Profile' user.username %}" title="Profile"><img src="Images/profile.png"></a>
+<a href="{% url 'main:Profile' %}" title="Profile"><img src="Images/profile.png"></a>
 <a href="{% url 'main:Your_Wall' user.username %}" title="Your Wall"><img src="Images/wall.png"></a>
 <a href="{% url 'main:Message' %}" title="Message"><img src="Images/message.png"></a>
-<a href="{% url 'main:News' user.username %}" title="News"><img src="Images/News.png"></a>
+<a href="{% url 'main:News' %}" title="News"><img src="Images/News.png"></a>
 <a href="{% url 'main:Topics' %}" title="Topics"><img src="Images/topics.png"></a>
 <a href="{% url 'LogIn' %}" title="Log Out"><img src="Images/logout.png"></a>
 </div>
