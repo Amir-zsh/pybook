@@ -11,6 +11,6 @@ class UserProfile(models.Model):
 	following=models.ManyToManyField(User,related_name='follower')
 	photo=models.ImageField(blank=True,null=True,upload_to='photos')
 	status=models.TextField(blank=True)
+	country=models.CharField(blank=True,max_length=30)
 	def __unicode__(self):
 		return self.user.username
-

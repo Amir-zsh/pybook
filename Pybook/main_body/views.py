@@ -24,7 +24,12 @@ def topic_view(request,topic_sub):
 @login_required 
 def profile_view(request):
     current_user=request.user
-    return render(request, 'main_body/Profile.html',{'user':current_user},)
+    birth=current_user.profile.birth_day
+    if birth:
+        birth_day=str(birth.year)+"/"+str(birth.month)+"/"+str(birth.day)
+    else:
+        birth_day=None
+    return render(request, 'main_body/Profile.html',{'user':current_user,"birth_day":birth_day},)
 @login_required
 def profile_change_view(request):
     current_user=request.user
@@ -44,9 +49,10 @@ def submit_changes(request):
     photo=request.POST.get('photo',False)
     first_name=request.POST['first_name']
     last_name=request.POST['last_name']
-    month=request.POST['Month']
-    year=request.POST['Year']
-    day=request.POST['Day']
+    month=int(request.POST['Month'])
+    print(month)
+    year=int(request.POST['Year'])
+    day=int(request.POST['Day'])
     country=request.POST['Country']
     current_user=request.user
     if password:
@@ -60,11 +66,13 @@ def submit_changes(request):
     if last_name:
         current_user.profile.last_name=last_name
     if country:
-        pass
+        current_user.profile.country=country
     if day and month and year:
-        birth_day=datetime.datetime(int(year),int(month),int(day))
-        current_user.birth_day=birth_day
-    return render(request,'main/profile.html',{'user':current_user})
+        birth_day=datetime.datetime(year,month,day)
+        current_user.profile.birth_day=birth_day
+    current_user.save()
+    current_user.profile.save()
+    return HttpResponseRedirect(reverse('main:profile', ))
 def log_out(request):
     logout(request)
     return HttpResponseRedirect(reverse('log_out',))
