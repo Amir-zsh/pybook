@@ -45,12 +45,15 @@ Topics
 </div>
 <div class="right">
 <font face="Arial Black, Gadget, sans-serif"><h2>Profile</h2></font>
+<form action="{% url 'main:profile_Change' %}" method="post">
+{% csrf_token %}
 <p>Name:{{user.profile.name}}</p><hr color="#FFFFFF" width="90%" size="1px">
 <p>Username :{{user.username}}</p><hr color="#FFFFFF" width="90%" size="1px">
 <p>Email :{{user.email}}</p><hr color="#FFFFFF" width="90%" size="1px">
 <p>Birthday :{{user.profile.birthday}}</p><hr color="#FFFFFF" width="90%" size="1px">
 <p>Bio :{{user.profile.status	}}</p><hr color="#FFFFFF" width="90%" size="1px">
-<a href="#"><button type="button">Change</button></a>
+<p><input type="submit" value="change" name="SignUp"></p>
+</form>
 </div>
 </div>
 <div class="sidebar">

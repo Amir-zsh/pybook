@@ -3,11 +3,16 @@ from main_body import views
 
 
 urlpatterns = patterns('',
-    url(r'^(?P<user_name>.+)/wall/$', views.wall_view, name='wall'),
-    url(r'^(?P<user_name>\w+)/profile/$',views.profile_view, name='profile'),
-    url(r'^(?P<user_name>\W+)/(\d+)/$', views.topic_view, name='topic'),
-    url(r'^(?P<user_name>\W+)/(\d+)/post/$', views.post, name='post'),
-    url(r'^(?P<user_name>\W+)/(\d+)/like/$', views.post_like, name='like'),
-    url(r'^search/$', views.search_view, name='search'),
+    url(r'^profile/$',views.profile_view, name='profile'),
+    url(r'^messages/$',views.profile_view, name='Message'),
+    url(r'^topics/$',views.profile_view, name='topics'),
+    url(r'^news/$',views.profile_view, name='News'),
+    url(r'^following/$',views.profile_view, name='following'),
+    url(r'^(?P<user_name>.+)/wall/$', views.wall_view, name='Your_Wall'),
+    url(r'^profileChange/$',views.profile_change_view, name='profile_Change'),
+    url(r'^subchange/$',views.submit_changes, name='sub_Change'),
+    url(r'^(?P<topic_sub>\w+)/$', views.topic_view, name='topic'),
+    url(r'^(?P<topic_sub>.+)/post/$', views.send_post, name='post'),
+    url(r'^(?P<topic_sub>.+)/like/$', views.like_post, name='like'),
+    url(r'^search/$', views.search_users, name='search'),
     )
-    

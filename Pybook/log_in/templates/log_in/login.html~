@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <title>|pb| LogIn or SignUp</title>
-<link rel="shortcut icon" href="% static 'log_in/images/Logo.gif' %">
+<link rel="shortcut icon" href="{% static 'log_in/images/Logo.gif' %}">
 <style type="text/css" media="screen">
 @font-face{
 	font-family: 'WrexhamScript';
 	src: url("{% static 'log_in/fonts/WrexhamScript.TTF'%}");
-	src: url("}% static 'log_in/fonts/WrexhamScript.TTF'%}") format('truetype'),
+	src: url("{% static 'log_in/fonts/WrexhamScript.TTF'%}") format('truetype'),
 		 url("{% static 'log_in/fonts/WrexhamScript.woff'%}") format('woff'),
 		 url("{% static 'log_in/fonts/WrexhamScript.svg'%}") format('svg');
 }
@@ -20,6 +20,13 @@ body{
 	background-position: bottom;
 	padding: 0 0 0 0;
 	margin: 0 0 0 0;
+}
+input,select,textarea,buttom{
+	border-radius:5 px;
+}
+input:focus,select:focus,textarea:focus{
+	box-shadow:insert 0 0 1px 1px #FFCC00;
+	outline:none;
 }
 .container{
 	width: 100%;
