@@ -75,6 +75,22 @@ def search_users(request):
         return render(request, 'main/search.html',{'most_relevant':most_relevant})
     else:
         pass
+def send_post(request,user_name,topic_sub):
+    user=User.objects.get(username=user_name)
+    topic=Topic.objects.get(subject=topic_sub)
+    content=request.POST['content']
+    new_post=POST(author=user,content=content,topic=topic)
+    new_post.save()
+    return render(request, 'main_body/topic.html',{'user':current_user},)
+def send_comment(request):
+    content=request.POST['content']
+    post=request.POST['post']
+    user=request.user
+    new_comment=Comment(autor=user,post=post,content=content)
+    new_comment.save()
+    return render(request, 'main_body/topic.html',{'user':current_user},)
 
+    
+    
     
     

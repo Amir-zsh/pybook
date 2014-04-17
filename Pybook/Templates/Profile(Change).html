@@ -13,8 +13,11 @@
 <div class="header">
 <img class="logo" src="Images/Logo.gif">
 <div class="headerSearch">
+<form action="{% url 'index:search' %}" method="post">
+{% csrf_token %}
+<input class="headerSearchText" name='searched_name' value= '' type="text" placeholder="Search your friends ...">
 <input class="headerSearchButton" type="submit" value="">
-<input class="headerSearchText" type="text" placeholder="Search your friends ...">
+</form>
 </div>
 <div class="headerMenu">
 <ul><li><a href="#">Profile</a></li>
@@ -44,17 +47,15 @@ Topics
 </div>
 <div class="right">
 <font face="Arial Black, Gadget, sans-serif"><h2>Profile</h2></font>
-<p>Name : <input type="text"></p>
+<p>First Name : <input type="text" name='first_name'></p>
 <hr color="#FFFFFF" width="90%" size="1px">
-<p>Username : <input align="right" type="text"></p>
+<p>Last Name : <input type="text" name='last_name'></p>
 <hr color="#FFFFFF" width="90%" size="1px">
-<p>Old Password : <input type="password"></p>
-<p>New Password : <input type="password"></p>
-<p>re-enter New Password : <input type="password"></p>
+<p>Old Password : <input type="password" name="old_password"></p>
+<p>New Password : <input type="password" name="new_password"></p>
+<p>re-enter New Password : <input type="password" name="re_password"></p>
 <hr color="#FFFFFF" width="90%" size="1px">
-<p>Email : <input type="text"></p>
-<hr color="#FFFFFF" width="90%" size="1px">
-<p>Cell-Phone : <input type="text"></p>
+<p>Email : <input type="text" name='email'></p>
 <hr color="#FFFFFF" width="90%" size="1px">
 <p>Birthday :  
 <select name="Day">

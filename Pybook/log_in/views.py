@@ -41,6 +41,20 @@ def user_sign_up(request):
     user.save()
     user = authenticate(username=user_name, password=password)
     login(request,user)
+    profile=UserProfile(user=user)
+    profile.save()
+    
     return HttpResponseRedirect(reverse('main:profile', args=(user.username,)))
+def send_post(request,user_name,topic_sub):
+    user=User.objects.get(username=user_name)
+    topic=Topic.objects.get(subject=topic_sub)
+    
+    content=request.POST['content']
+    new_post=POST(author=user,content=content,topic=topic)
+    new_post.save()
+    
+    
+    
+    
 
             
