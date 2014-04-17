@@ -1,0 +1,67 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>|pb| Profile</title>
+<link rel="shortcut icon" href="{% static 'log_in/images/Logo.gif'%}">
+<link rel="stylesheet" type="text/css" href="{% static 'log_in/mainFrame.css'%}">
+<link rel="stylesheet" type="text/css" href="{% static 'log_in/Profile.css'%}">
+</head>
+
+<body>
+<div class="container">
+<div class="header">
+<img class="logo" src="{% static 'log_in/images/Logo.gif'%}">
+<div class="headerSearch">
+<input class="headerSearchButton" type="submit" value="">
+<input class="headerSearchText" type="text" placeholder="Search your friends ...">
+</div>
+<div class="headerMenu">
+<ul><li><a href="#">Profile</a></li>
+<li><a href="#">Your Wall</a></li>
+<li><a href="#">Message</a></li>
+<li><a href="#">News</a></li>
+<li><a href="#">Topics</a></li>
+<li><a href="{%url 'log_out'%}">Log Out</a></li></ul>
+</div>
+</div>
+<div class="content">
+<div class="topicsMenu">
+Topics
+<ul><a href="#"><li>Basic</li></a>
+<a href="#"><li>django</li></a>
+<a href="#"><li>pygame</li></a>
+<a href="#"><li>Multi Threading</li></ul></a>
+</div>
+<div class="profile">
+<div class="left">
+<div class="profilePicture"></div>
+<div class="changeProfilePicture"><input type="file" name='picture'  title="Change your profile picture"></div>
+<div class="followPanel">
+<div class="follower"><a href="#">0 follower</a></div>
+<div class="following"><a href="#">0 following</a></div>
+</div>
+</div>
+<div class="right">
+<font face="Arial Black, Gadget, sans-serif"><h2>Profile</h2></font>
+<p>Name:{{user.profile.name}}</p><hr color="#FFFFFF" width="90%" size="1px">
+<p>Username :{{user.username}}</p><hr color="#FFFFFF" width="90%" size="1px">
+<p>Email :{{user.email}}</p><hr color="#FFFFFF" width="90%" size="1px">
+<p>Birthday :{{user.profile.birthday}}</p><hr color="#FFFFFF" width="90%" size="1px">
+<p>Bio :{{user.profile.status	}}</p><hr color="#FFFFFF" width="90%" size="1px">
+<a href="#"><button type="button">Change</button></a>
+</div>
+</div>
+<div class="sidebar">
+<a href="#" title="Profile"><img src="{% static 'log_in/images/profile.png'%}"></a>
+<a href="#" title="Your Wall"><img src="{% static 'log_in/images/wall.png'%}"></a>
+<a href="#" title="Message"><img src="{% static 'log_in/images/message.png'%}"></a>
+<a href="#" title="News"><img src="{% static 'log_in/images/News.png'%}"></a>
+<a href="#" title="Topics"><img src="{% static 'log_in/images/topics.png'%}"></a>
+<a href="{%url 'log_out'%}" title="Log Out"><img src="{% static 'log_in/images/logout.png'%}"></a>
+</div>
+</div>
+</div>
+</body>
+</html>

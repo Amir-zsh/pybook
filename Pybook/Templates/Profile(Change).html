@@ -20,29 +20,29 @@
 </form>
 </div>
 <div class="headerMenu">
-<ul><li><a href="#">Profile</a></li>
-<li><a href="#">Your Wall</a></li>
-<li><a href="#">Message</a></li>
-<li><a href="#">News</a></li>
-<li><a href="#">Topics</a></li>
-<li><a href="LogIn.html">Log Out</a></li></ul>
+<ul><li><a href="{% url 'main:Profile' %}">Profile</a></li>
+<li><a href="{% url 'main:Your_Wall' user.username %}">Your Wall</a></li>
+<li><a href="{% url 'main:Message' %}">Message</a></li>
+<li><a href="{% url 'main:News' %}">News</a></li>
+<li><a href="{% url 'main:Topics' %}">Topics</a></li>
+<li><a href="{% url 'LogIn' %}">Log Out</a></li></ul>
 </div>
 </div>
 <div class="content">
 <div class="topicsMenu">
 Topics
-<ul><a href="#"><li>Basic</li></a>
-<a href="#"><li>django</li></a>
-<a href="#"><li>pygame</li></a>
-<a href="#"><li>Multi Threading</li></ul></a>
+<ul><a href="{% url 'main:Topics Basic' %}"><li>Basic</li></a>
+<a href="{% url 'main:Topics Django' %}"><li>Django</li></a>
+<a href="{% url 'main:Topics Pygame' %}"><li>Pygame</li></a>
+<a href="{% url 'main:Topics Multi_Threading' %}"><li>Multi Threading</li></ul></a>
 </div>
 <div class="profile">
 <div class="left">
 <div class="profilePicture"></div>
 <div class="changeProfilePicture"><input type="file" accept="image/*" title="Change your profile picture"></div>
 <div class="followPanel">
-<div class="follower"><a href="#">0 follower</a></div>
-<div class="following"><a href="#">0 following</a></div>
+<div class="follower"><a href="{% url 'main:follower' user.username %}">0 follower</a></div>
+<div class="following"><a href="{% url 'main:following' user.username %}">0 following</a></div>
 </div>
 </div>
 <div class="right">
@@ -459,16 +459,16 @@ Topics
 </select>
 </p><hr color="#FFFFFF" width="90%" size="1px">
 <p>Bio :<br> <textarea cols="30" rows="5" placeholder="about yourself ..." style="resize:none;"></textarea></p><hr color="#FFFFFF" width="90%" size="1px">
-<a href="#"><button type="button">Save Changes</button></a>
+<a href="{% url 'main:Profile' %}"><button type="button">Save Changes</button></a> 
 </div>
 </div>
 <div class="sidebar">
-<a href="#" title="Profile"><img src="Images/profile.png"></a>
-<a href="#" title="Your Wall"><img src="Images/wall.png"></a>
-<a href="#" title="Message"><img src="Images/message.png"></a>
-<a href="#" title="News"><img src="Images/News.png"></a>
-<a href="#" title="Topics"><img src="Images/topics.png"></a>
-<a href="LogIn.html" title="Log Out"><img src="Images/logout.png"></a>
+<a href="{% url 'main:Profile' %}" title="Profile"><img src="Images/profile.png"></a>
+<a href="{% url 'main:Your_Wall' user.username %}" title="Your Wall"><img src="Images/wall.png"></a>
+<a href="{% url 'main:Message' %}" title="Message"><img src="Images/message.png"></a>
+<a href="{% url 'main:News' %}" title="News"><img src="Images/News.png"></a>
+<a href="{% url 'main:Topics' %}" title="Topics"><img src="Images/topics.png"></a>
+<a href="{% url 'LogIn' %}" title="Log Out"><img src="Images/logout.png"></a>
 </div>
 </div>
 </div>

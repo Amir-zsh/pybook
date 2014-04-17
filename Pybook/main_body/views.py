@@ -64,17 +64,14 @@ def log_out(request):
 
 def search_users(request):
     all_users=UserProfile.objects.all()                             
-    searched_name=request.Post['searched_name']                 #The name that a user may search
-    searched_first=searched_name.split()[0]                     #We devided the name to first name and last name
-    searched_last=searched_name.split()[1]
-    most_relevant=[]                                            #It's created to get all the most relevant searches
+    searched_name=request.Post['searched_name']                         #The name that a user may search
+    searched_first=searched_name.split()[0].lower()                     #We devided the name to first name and last name
+    searched_last=searched_name.split()[1].lower()                      #We made all the names lowercase to make the search more accurate 
+    most_relevant=[]                                                    #It's created to get all the most relevant searches
     for i in range(len(all_users)):
-        if all_users[i].first_name==searched_first and all_users[i].last_name==searched_last:
+        if all_users[i].first_name.lower()==searched_first and all_users[i].last_name.lower()==searched_last:
             most_relevant.append[all_users[i]]
-    if len(most_relevant)>0:
-        return render(request, 'main/search.html',{'most_relevant':most_relevant})
-    else:
-        pass
+    return render(request, 'main/search.html',{'most_relevant':most_relevant})
 def send_post(request,user_name,topic_sub):
     user=User.objects.get(username=user_name)
     topic=Topic.objects.get(subject=topic_sub)
@@ -89,6 +86,7 @@ def send_comment(request):
     new_comment=Comment(autor=user,post=post,content=content)
     new_comment.save()
     return render(request, 'main_body/topic.html',{'user':current_user},)
+
 
     
     
