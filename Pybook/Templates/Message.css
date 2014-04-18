@@ -1,0 +1,95 @@
+@charset "utf-8";
+/* CSS Document */
+.innerContent{
+	width: 69.5%;
+	height: auto;
+	margine: 0;
+	padding: 0;
+	float: left;
+	margin-bottom: 110px;
+}
+.writeMessage{
+	width: auto;
+	height: 100px;
+	position: fixed;
+	right: 10%;
+	left: 22%;
+	bottom: 5px;
+	background-color: #333;
+	opacity: 1;
+	border-radius: 10px;
+	padding: 5px 1% 5px 1%;
+}
+.yourMessage{
+	max-width: 75%;
+	height: auto;
+	float: left;
+	overflow: auto;
+	background-color: #333;
+	opacity: 0.7;
+	border-radius: 20px;
+	border-bottom-left-radius: 0;
+	margin: 10px;
+	padding: 10px;
+	border: #FFF 2px solid;
+}
+.clear{
+	clear:both;
+}
+.otherMessage{
+	max-width: 75%;
+	height: auto;
+	float: right;
+	overflow: auto;
+	background-color: #333;
+	opacity: 0.7;
+	border-radius: 20px;
+	border-bottom-right-radius: 0;
+	margin: 10px;
+	margin-right: 0;
+	padding: 10px;
+	border: #FFF 2px solid;
+}
+.messageProfilePictureOfYou{
+	width: 20px;
+	height: 20px;
+	background-image: url(Images/defaultProfilePicture.png);
+	background-size: 20px 20px;
+	float: right;
+	top: 0;
+	left: 0;
+}
+.messageProfilePictureOfOther{
+	width: 20px;
+	height: 20px;
+	background-image: url(Images/defaultProfilePicture.png);
+	background-size: 20px 20px;
+	float: left;
+	top: 0;
+	left: 0;
+}
+.messageHeaderOfYou{
+	width: auto;
+	height: auto;
+	float: left;
+	font-size: 10px;
+}
+.messageHeaderOfOther{
+	width: auto;
+	height: auto;
+	float: right;
+	font-size: 10px;
+}
+.messageHeaderOfYou li , .messageHeaderOfOther li{
+	display: inline-block;
+	padding-right: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.messageHeaderOfYou ul , .messageHeaderOfOther ul{
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+
