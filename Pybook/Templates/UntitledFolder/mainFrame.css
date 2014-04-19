@@ -1,0 +1,177 @@
+@charset "utf-8";
+/* CSS Document */
+@font-face{
+	font-family: 'WrexhamScript';
+	src: url(Fonts/WrexhamScript.TTF);
+	src: url(Fonts/WrexhamScript.TTF) format('truetype'),
+		 url(Fonts/WrexhamScript.woff) format('woff'),
+		 url(Fonts/WrexhamScript.svg) format('svg');
+}
+body{
+	background-image: url(Images/Bokeh-Backgroundt.gif);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% auto;
+	background-position: bottom;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+}
+input,select,textarea,button{
+	border-radius: 5px;
+}
+input:focus,select:focus,textarea:focus{
+	box-shadow: inset 0 0 1px 1px #FFCC00;
+	outline: none;
+}
+.container{
+	width: 100%;
+	height: auto;
+}
+.header{
+	width: 100%;
+	height: 50px;
+	background-color: #333;
+	padding: 0 0 0 0;
+	opacity: 1;
+	border-bottom-color: #FFF;
+	border-bottom-style:solid;
+	border-bottom-width: 1px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	overflow: hidden;
+}
+.headerSearch{
+	width: 20%;
+	height: 30px;
+	margin: 10px 10px 10px 10px;
+	float: left;
+	background-color: #666;
+	border-radius: 10px;
+}
+.headerSearchButton{
+	height: 100%;
+	width: 15%;
+	background-color: transparent;
+	background-image: url(Images/search.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border: none;
+	cursor: pointer;
+	float: left;
+}
+.headerSearchText{
+	width: 85%;
+	height: 100%;
+	background-color: transparent;
+	color: #FFF;
+	border: none;
+	float: left;
+}
+.headerMenu{
+	width: auto;
+	height: 25px;
+	float: right;
+	display: block;
+	color: #FFF;
+	font-family: 'WrexhamScript'; 
+	padding-bottom: 10px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 14px;
+}
+.headerSearchText:focus , .headerSearchButton:focus{
+	outline: none;
+}
+.headerMenu li{
+	display: inline-block;
+	color: #FFF;
+	font-size: 18px;
+	padding-right: 10px;
+}
+.headerMenu li a:link , .headerMenu li a:active , .headerMenu li a:focus ,.headerMenu li a:visited{
+	color: #FFF;
+	text-decoration: none;
+}
+.headerMenu li a:hover{
+	color: #999;
+}
+img.logo{
+	width: 50px;
+	height: 50px;
+	margin-left: 5px;
+	margin-right: 5px;
+	float: left;
+}
+.content{
+	width: 95%;
+	height: auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left:auto;
+	margin-right:auto;
+	color:#fff;
+	overflow: auto;
+}
+.topicsMenu{
+	width: 20%;
+	height: auto;
+	float: left;
+	text-align: center;
+	color: #FFF;
+	font-family: 'WrexhamScript';
+	padding: 10px 10px 10px 0px;
+	background-color: #333;
+	opacity: 0.7;
+	border-radius: 10px;
+}
+.topicsMenu ul{
+	margin: 10px 0 10px 0;
+	padding: 0px 0px 0px 0px;
+}
+.topicsMenu ul li{
+	width: 90%;
+	text-align: center;
+	background-color: #FC0;
+	font-family: 'WrexhamScript';
+	padding: 5px 5px 5px 5px;
+	margin-bottom: 5px;
+	margin-right: 5px;
+	color: #006;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	list-style-type: none;	
+}
+.topicsMenu ul a:link, .topicsMenu ul a:hover{
+	text-decoration: none;
+}
+.topicsMenu ul a:hover li{
+	background-color: #333;
+	color: #FFF;
+	border: 2px solid #FFF;
+	border-left-width: 0px;
+}
+.sidebar{
+	width: 5%;
+	height: auto;
+	float: right;
+	padding: 10px 10px 10px 10px;
+	background-color: #333;
+	opacity: 0.7;
+	border-radius: 10px;
+	overflow: hidden;
+	position:fixed;
+	right: 2.5%;
+}
+.sidebar a img{
+	width: 90%;
+	height: auto;
+	-webkit-transition: width 0s,height 0s;
+	transition: width 0s,height 0s;
+}
+.sidebar a img:hover {
+	width: 100%;
+	height: auto;
+}
