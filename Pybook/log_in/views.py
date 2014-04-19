@@ -32,6 +32,10 @@ def user_sign_up(request):
     gender=request.POST['Gender']
     if not user_name or not email or not password:
         return render(request, 'log_in/login.html', {'error_message': "please complete required fields.",})
+
+    if email:
+        if vali_mail(email)==False:
+            return render(request, 'log_in/login.html', {'error_message': "please enter a valid mail(Only letters, numbers, underscores, and one dot (.) are allowed)",})
     
         
     try:
