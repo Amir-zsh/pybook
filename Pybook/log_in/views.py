@@ -20,7 +20,7 @@ def user_log_in(request):
     if user is not None:
         if user.is_active:
             login(request, user)
-            return HttpResponseRedirect(reverse('main:profile', args=(username,)))
+            return HttpResponseRedirect(reverse('main:profile',))
     else:
         return render(request, 'log_in/login.html', {'error_message': "username or password is invalid.",})
         

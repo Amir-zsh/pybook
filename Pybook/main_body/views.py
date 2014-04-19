@@ -5,20 +5,22 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from accounts.models import UserProfile
+from accounts.models import UserProfile 
 from main_body.models import *
+
 import datetime
 
 @login_required
 def wall_view(request,user_name):
     current_user=request.user
-    return render(request, 'main/wall.html',{'user':current_user})
+    posts=Post.objects.filter(author=current_user)
+    return render(request, 'main_body/Wall.html',{'user':current_user,'posts':posts})
 @login_required
 def topic_view(request,topic_sub):
-    topic=Topic.set_all.get(subject=topic_sub)
+    topic=Topic.objects.get(subject=topic_sub)
     current_user=request.user
     if current_user.is_authenticated():
-        return render(request, 'main/topic.html',{'user':current_user,'topic':topic},)
+        return render(request, 'main_body/Topic.html',{'user':current_user,'topic':topic},)
     else:
         return HttpResponseRedirect(reverse('index:login', ))
 @login_required 
@@ -96,7 +98,7 @@ def send_post(request,topic_sub):
     new_post.save()
     return HttpResponseRedirect(reverse('main:topic', ),args=(topic_sub))
 @login_required
-def send_comment(request):
+def send_comment(request,post):
     content=request.POST['content']
     post=request.POST['post']
     user=request.user

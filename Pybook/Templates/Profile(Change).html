@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <title>|pb| Profile</title>
-<link rel="shortcut icon" href="Images/Logo.gif">
-<link rel="stylesheet" type="text/css" href="mainFrame.css">
-<link rel="stylesheet" type="text/css" href="Profile.css">
+<link rel="shortcut icon" href="{% static 'log_in/images/Logo.gif'%}">
+<link rel="stylesheet" type="text/css" href="{% static 'log_in/mainFrame.css'%}">
+<link rel="stylesheet" type="text/css" href="{% static 'log_in/Profile.css'%}">
 </head>
 
 <body>
 <div class="container">
 <div class="header">
-<img class="logo" src="Images/Logo.gif">
+<img class="logo" src="{% static 'log_in/images/Logo.gif'%}">
 <div class="headerSearch">
 <form action="{% url 'index:search' %}" method="post">
 {% csrf_token %}
@@ -24,24 +24,24 @@
 <li><a href="{% url 'main:Your_Wall' user.username %}">Your Wall</a></li>
 <li><a href="{% url 'main:Message' %}">Message</a></li>
 <li><a href="{% url 'main:News' %}">News</a></li>
-<li><a href="{% url 'main:Topics' %}">Topics</a></li>
+<li><a href="{% url 'main:topics' %}">Topics</a></li>
 <li><a href="{% url 'LogIn' %}">Log Out</a></li></ul>
 </div>
 </div>
 <div class="content">
 <div class="topicsMenu">
 Topics
-<ul><a href="{% url 'main:Topics Basic' %}"><li>Basic</li></a>
-<a href="{% url 'main:Topics Django' %}"><li>Django</li></a>
-<a href="{% url 'main:Topics Pygame' %}"><li>Pygame</li></a>
-<a href="{% url 'main:Topics Multi_Threading' %}"><li>Multi Threading</li></ul></a>
+<ul><a href="{% url 'main:topic' 'Basic' %}"><li>Basic</li></a>
+<a href="{% url 'main:topic' 'Django' %}"><li>Django</li></a>
+<a href="{% url 'main:topic' 'Pygame' %}"><li>Pygame</li></a>
+<a href="{% url 'main:topic' 'Multi_Threading' %}"><li>Multi Threading</li></ul></a>
 </div>
 <div class="profile">
 <div class="left">
 <div class="profilePicture"></div>
 <div class="changeProfilePicture"><input type="file" accept="image/*" title="Change your profile picture"></div>
 <div class="followPanel">
-<div class="follower"><a href="{% url 'main:follower' user.username %}">0 follower</a></div>
+<div class="follower"><a href="{% url 'main:following' user.username %}">0 follower</a></div>
 <div class="following"><a href="{% url 'main:following' user.username %}">0 following</a></div>
 </div>
 </div>
@@ -463,12 +463,12 @@ Topics
 </div>
 </div>
 <div class="sidebar">
-<a href="{% url 'main:Profile' %}" title="Profile"><img src="Images/profile.png"></a>
-<a href="{% url 'main:Your_Wall' user.username %}" title="Your Wall"><img src="Images/wall.png"></a>
-<a href="{% url 'main:Message' %}" title="Message"><img src="Images/message.png"></a>
-<a href="{% url 'main:News' %}" title="News"><img src="Images/News.png"></a>
-<a href="{% url 'main:Topics' %}" title="Topics"><img src="Images/topics.png"></a>
-<a href="{% url 'LogIn' %}" title="Log Out"><img src="Images/logout.png"></a>
+<a href="{% url 'main:Profile' %}" title="Profile"><img src="{% static 'log_in/images/profile.png'%}"></a>
+<a href="{% url 'main:Your_Wall' user.username %}" title="Your Wall"><img src="{% static 'log_in/images/wall.png'%}"></a>
+<a href="{% url 'main:Message' %}" title="Message"><img src="{% static 'log_in/images/message.png'%}"></a>
+<a href="{% url 'main:News' %}" title="News"><img src="{% static 'log_in/images/News.png'%}"></a>
+<a href="{% url 'main:topics' %}" title="Topics"><img src="{% static 'log_in/images/topics.png'%}"></a>
+<a href="{% url 'LogIn' %}" title="Log Out"><img src="{% static 'log_in/images/logout.png'%}"></a>
 </div>
 </div>
 </div>

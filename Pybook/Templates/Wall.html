@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <title>|pb| Name's Wall</title>
-<link rel="shortcut icon" href="Images/Logo.gif">
-<link rel="stylesheet" type="text/css" href="mainFrame.css">
+<link rel="shortcut icon" href="{% static 'log_in/images/Logo.gif'%}">
+<link rel="stylesheet" type="text/css" href="{% static 'log_in/mainFrame.css'%}">
 <link rel="stylesheet" type="text/css" href="Wall.css">
 </head>
 
 <body>
 <div class="container">
 	<div class="header">
-	<img class="logo" src="Images/Logo.gif">
+	<img class="logo" src="{% static 'log_in/images/Logo.gif'%}">
 		<div class="headerSearch">
 		<input class="headerSearchButton" type="submit" value="">
 		<input class="headerSearchText" type="text" placeholder="Search your friends ...">
@@ -21,17 +21,17 @@
 		<li><a href="{% url 'main:Your_Wall' user.username %}">Your Wall</a></li>
 		<li><a href="{% url 'main:Message' %}">Message</a></li>
 		<li><a href="{% url 'main:News' %}">News</a></li>
-		<li><a href="{% url 'main:Topics' %}">Topics</a></li>
+		<li><a href="{% url 'main:topics' %}">Topics</a></li>
 		<li><a href="{% url 'LogIn' %}">Log Out</a></li></ul>
 		</div>
 	</div>
 	<div class="content">
 		<div class="topicsMenu">
 		Topics
-		<ul><a href="{% url 'main:Topics Basic' %}"><li>Basic</li></a>
-		<a href="{% url 'main:Topics Django' %}"><li>Django</li></a>
-		<a href="{% url 'main:Topics Pygame' %}"><li>Pygame</li></a>
-		<a href="{% url 'main:Topics Multi_Threading' %}"><li>Multi Threading</li></ul></a>
+		<ul><a href="{% url 'main:topic' 'Basic' %}"><li>Basic</li></a>
+		<a href="{% url 'main:topic' 'Django' %}"><li>Django</li></a>
+		<a href="{% url 'main:topic' 'Pygame' %}"><li>Pygame</li></a>
+		<a href="{% url 'main:topic' 'Multi_Threading' %}"><li>Multi Threading</li></ul></a>
 		</div>
         <div class="innerContent">
 		<div class="personalInfo">
@@ -39,7 +39,7 @@
 				<div class="profilePicture">
        			</div>
                 <div class="followPanel">
-                	<div class="follower"><a href="{% url 'main:follower' user.username %}">0 follower</a></div>
+                	<div class="follower"><a href="{% url 'main:following' user.username %}">0 follower</a></div>
                     <div class="following"><a href="{% url 'main:following' user.username %}">0 following</a></div>
                 </div>
                 <div class="becomeFollower"><input type="submit" value="follow this person"></div>
@@ -63,12 +63,12 @@
                     </div>
                     <div class="postContent">This is my postThis is my postThis is my postThis is my postThis is my postThis is my postThis is my postThis is my postThis is my postThis is my postThis is my postThis is my postThis is my postThis is my postThis is my postThis is my postThis is my postThis is my post<br>This is my postThis is my postThis is my postThis is my post<br><br>WTF!!!
                     </div>
-                    <div class="postFooter"><ul><li><button class="Footer" type="submit" value=""><img src="Images/Star.png" class="LikeButton" title="Like"></button>0</li>
-                                                <li><button class="Footer" type="submit" value=""><img src="Images/Comment.gif" class="CommentButton" title="Comment"></button>1</li>
+                    <div class="postFooter"><ul><li><button class="Footer" type="submit" value=""><img src="{% static 'log_in/images/Star.png'%}" class="LikeButton" title="Like"></button>0</li>
+                                                <li><button class="Footer" type="submit" value=""><img src="{% static 'log_in/images/Comment.gif'%}" class="CommentButton" title="Comment"></button>1</li>
                     </ul></div>
                 </div>
                 <div class="comment">
-                	<div class="enterComment">Enter Comment :&nbsp;<input type="text" size="62" value="" placeholder="Comment"><input type="submit" value="Comment"></div>
+                	<div class="enterComment">Enter Comment :&nbsp;<input type="text"  name='comment' size="62" value="" placeholder="Comment"><input type="submit" value="Comment"></div>
                     <div class="viewComment">
                     <div class="ProfilePictureForCm"></div>
                     <div class="commentHeader"><ul><li>Name</li>
@@ -80,12 +80,12 @@
 	</div>
  
 	<div class="sidebar">
-	<a href="{% url 'main:Profile' %}" title="Profile"><img src="Images/profile.png"></a>
-	<a href="{% url 'main:Your_Wall' user.username %}" title="Your Wall"><img src="Images/wall.png"></a>
-	<a href="{% url 'main:Message' %}" title="Message"><img src="Images/message.png"></a>
-	<a href="{% url 'main:News' %}" title="News"><img src="Images/News.png"></a>
-	<a href="{% url 'main:Topics' %}" title="Topics"><img src="Images/topics.png"></a>
-	<a href="{% url 'LogIn' %}" title="Log Out"><img src="Images/logout.png"></a>
+	<a href="{% url 'main:Profile' %}" title="Profile"><img src="{% static 'log_in/images/profile.png'%}"></a>
+	<a href="{% url 'main:Your_Wall' user.username %}" title="Your Wall"><img src="{% static 'log_in/images/wall.png'%}"></a>
+	<a href="{% url 'main:Message' %}" title="Message"><img src="{% static 'log_in/images/message.png'%}"></a>
+	<a href="{% url 'main:News' %}" title="News"><img src="{% static 'log_in/images/News.png'%}"></a>
+	<a href="{% url 'main:topics' %}" title="Topics"><img src="{% static 'log_in/images/topics.png'%}"></a>
+	<a href="{% url 'LogIn' %}" title="Log Out"><img src="{% static 'log_in/images/logout.png'%}"></a>
 	</div>
 	</div>
 </div>
