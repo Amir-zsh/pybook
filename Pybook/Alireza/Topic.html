@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>|pb| Topic's Name</title>
+<link rel="shortcut icon" href="{% static 'main_body/images/Logo.gif'%}">
+<link rel="stylesheet" type="text/css" href="{% static 'main_body/mainFrame.css'%}">
+<link rel="stylesheet" type="text/css" href="Topic.css">
+</head>
+
+<body>
+<div class="container">
+	<div class="header">
+		<img class="logo" src="{% static 'main_body/images/Logo.gif'%}">
+		<div class="headerSearch">
+			<input class="headerSearchButton" type="submit" value="">
+			<input class="headerSearchText" type="text" placeholder="Search your friends ...">
+		</div>
+		<div class="headerMenu">
+			<ul><li><a href="{% url 'main:Profile' %}">Profile</a></li>
+			<li><a href="{% url 'main:Your_Wall' user.username %}">Your Wall</a></li>
+			<li><a href="{% url 'main:Message' %}">Message</a></li>
+			<li><a href="{% url 'main:News' %}">News</a></li>
+			<li><a href="{% url 'main:topics' %}">Topics</a></li>
+			<li><a href="{% url 'LogIn' %}">Log Out</a></li></ul>
+		</div>
+	</div>
+    <div class="content">
+        <div class="topicsMenu">
+            Topics
+            <ul><a href="{% url 'main:topic' 'Basic' %}"><li>Basic</li></a>
+            <a href="{% url 'main:topic' 'Django' %}"><li>django</li></a>
+            <a href="{% url 'main:topic' 'Pygame' %}"><li>pygame</li></a>
+            <a href="{% url 'main:topic' 'Multi_Threading' %}"><li>Multi Threading</li></ul></a>
+        </div>
+        <div class="innerContent">
+        	<div class="TopicName">Topic's Name here
+            </div>
+            <div class="writePost">Write Your Post :<br>
+            	<textarea cols="70" rows="5" placeholder="write your post here ..."  style="resize: none; width:95%; padding-bottom: 5px;"></textarea>
+                <input type="submit" value="Post">
+            </div>
+            <div class="postsAndComments">
+            	<div class="post">
+                	<div class="ProfilePicture"></div>
+                    <div class="postHeader"><ul><li>Written by: Name</li>
+                                                <li>Date: 1.1.2014</li>
+                                                <li>Topic: Basic</li></ul>
+                    </div>
+                    <div class="postContent">This is my postThis is my postThis is my postThis is my postThis is my postThis is my postThis is my postThis is my postThis is my postThis is my postThis is my postThis is my postThis is my postThis is my postThis is my postThis is my postThis is my postThis is my post<br>This is my postThis is my postThis is my postThis is my post<br><br>WTF!!!
+                    </div>
+                    <div class="postFooter"><ul><li><button class="Footer" type="submit" value=""><img src="Images/Star.png" class="LikeButton" title="Like"></button>0</li>
+                                                <li><button class="Footer" type="submit" value=""><img src="Images/Comment.gif" class="CommentButton" title="Comment"></button>1</li>
+                    </ul></div>
+                </div>
+                <div class="comment">
+                	<div class="enterComment">Enter Comment :&nbsp;<input type="text" size="62" value="" placeholder="Comment" style=" padding-right: 3px;"><input type="submit" value="Comment"></div>
+                    <div class="viewComment">
+                    <div class="ProfilePictureForCm"></div>
+                    <div class="commentHeader"><ul><li>Name</li>
+                                                   <li>Date & time</li></ul>
+                    </div>
+                    <div class="commentContent">This is my comment<br>This is my comment<br>This is my comment<br>This is my comment<br>This is my commentThis is my commentThis is my commentThis is my commentThis is my commentThis is my commentThis is my commentThis is my commentThis is my commentThis is my comment</div>
+                </div>
+            </div>
+	</div>
+        </div>
+        <div class="sidebar">
+            <a href="{% url 'main:Profile' %}" title="Profile"><img src="{% static 'main_body/images/profile.png'%}"></a>
+            <a href="{% url 'main:Your_Wall' user.username %}" title="Your Wall"><img src="{% static 'main_body/images/wall.png'%}"></a>
+            <a href="{% url 'main:Message' %}" title="Message"><img src="{% static 'main_body/images/message.png'%}"></a>
+            <a href="{% url 'main:News' %}" title="News"><img src="{% static 'main_body/images/News.png'%}"></a>
+            <a href="{% url 'main:topics' %}" title="Topics"><img src="{% static 'main_body/images/topics.png'%}"></a>
+            <a href="{% url 'LogIn' %}" title="Log Out"><img src="{% static 'main_body/images/logout.png'%}"></a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
