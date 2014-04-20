@@ -206,7 +206,7 @@ body{
 	outline: none;
 	width: 95%;
 }
-.signButton{
+.enterButton{
 	width: 90%;
 	height: auto;
 	background-color: #FC0;
@@ -217,7 +217,7 @@ body{
 	font-weight: bolder;
 	color: #003;
 }
-.signButton:hover{
+.enterButton:hover{
 	background-color: transparent;
 	color: #FFF;
 }
