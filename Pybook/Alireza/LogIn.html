@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>|pb| LogIn or SignUp</title>
+<link rel="shortcut icon" href="Logo.gif">
+<style type="text/css" media="screen">
+@font-face{
+	font-family: 'WrexhamScript';
+	src: url(Fonts/WrexhamScript.TTF);
+	src: url(Fonts/WrexhamScript.TTF) format('truetype'),
+		 url(Fonts/WrexhamScript.woff) format('woff'),
+		 url(Fonts/WrexhamScript.svg) format('svg');
+}
+body{
+	background-image: url(Images/Bokeh-Backgroundt.gif);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% auto;
+	background-position: bottom;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+}
+input,select,textarea,button{
+	border-radius: 5px;
+}
+input:focus,select:focus,textarea:focus{
+	box-shadow: inset 0 0 1px 1px #FFCC00;
+	outline: none;
+}
+.container{
+	width: 100%;
+	height: auto;
+}
+.header{
+	width: 100%;
+	height: 50px;
+	background-color: #333;
+	padding: 0 0 0 0;
+	opacity: 1;
+	border-bottom-color: #FFF;
+	border-bottom-style:solid;
+	border-bottom-width: 1px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	overflow: hidden;
+}
+img.logo{
+	width: 50px;
+	height: 50px;
+	margin-left: 5px;
+	margin-right: 5px;
+	float: left;
+}
+.content{
+	width: 95%;
+	height: auto;
+	opacity: 0.7;
+	background-color: #333;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left:auto;
+	margin-right:auto;
+	color:#fff;
+	overflow: auto;
+	border-top: 1px  #FFFFFF solid;
+	border-bottom: 1px #FFFFFF solid;
+	border-radius: 10px;
+}
+.status{
+	width: 50%;
+	height: auto;
+	margin-bottom: auto;
+	margin-top: auto;
+	float: left;
+	position: relative;
+}
+.forms{
+	width: 50%;
+	position: relative;
+	float: right;
+}
+.login{
+	width: 90%;
+	height: auto;
+	float: right;
+	text-align: center;
+	border: #FFF 2px solid;
+	background-color: #03F;
+	padding-left: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 5px;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	border-right-style: none;
+	-webkit-transition:width 0s;
+	transition:width 0s;
+}
+.signup{
+	width: 90%;
+	height: auto;
+	float: right;
+	text-align: center;
+	border: #FFF 2px solid;
+	background-color: #03F;
+	padding-left: 5px;
+	margin-bottom: 10px;
+	margin-left: 5px;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	border-right-style: none;
+	-webkit-transition:width 0s;
+	transition:width 0s;
+}
+.login:hover , .signup:hover{
+	width: 95%;
+}
+.share,.yourinformation,.about,.python,.pybook{
+	height: auto;
+	width: auto;
+	float: left;
+	font-family: 'WrexhamScript';
+	font-size: 20px;
+	background-color: #FC0;
+	color: #006;
+	text-align: center;
+	border: 2px #FFFFFF dotted;
+	border-left-style: none;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	padding-left: 25%;
+	padding-right: 25%;
+}
+p.LogIn,p.su{
+	font-family:Georgia, "Times New Roman", Times, serif;
+	color: #FFF;
+	font-size: 20px;
+	font-style: italic;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+<div class="header"><img src="Images/Logo.gif" class="logo"></div>
+<div class="content">
+<div class="status">
+<div class="share"><p>Share</p></div>
+<div class="yourinformation"><p>Your Information</p></div>
+<div class="about"><p>about</p></div>
+<div class="python"><p>Python</p></div>
+<div class="pybook"><p>In "pybook"</p></div>
+</div>
+<div class="forms">
+<div class="login">
+<p class="LogIn">If you are a member,LogIn!</p>
+<p class="LogIn">Username: <input name="memberUsername" placeholder="Username" type="text" size="20" maxlength="30"></p>
+<p class="LogIn">Password: <input name="memberPasword" type="password" placeholder="password" size="20" maxlength="30"></p>
+<p class="LogIn"><input type="submit" value="Log In" name="LogIn"></p></div>
+<div class="signup">
+<p class="su">Sign Up</p>
+<p class="su">Name: <input name="name" type="text" placeholder="Name" size="20" maxlength="30"></p>
+<p class="su">Password: <input name="password" type="password" placeholder="password"></p>
+<p class="su">Username: <input name="username" type="text" placeholder="Username"></p>
+<p class="su">Email: <input name="email" type="text" placeholder="email@site.ir"></p>
+<p class="su">Gender: <input type="radio" name="Gender" value="Male" checked>Male <input type="radio" name="Gender" value="Female">Female</p>
+<p class="su"><input type="submit" value="Sign Up" name="SignUp"></p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
