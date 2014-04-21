@@ -13,10 +13,13 @@
 <div class="container">
 <div class="header">
 <img class="logo" src="{% static 'log_in/images/Logo.gif'%}">
-<div class="headerSearch">
-<input class="headerSearchButton" type="submit" value="">
-<input class="headerSearchText" type="text" placeholder="Search your friends ...">
-</div>
+		<form action="{% url 'main:search' %}" method="post">
+		{% csrf_token %}
+		<div class="headerSearch">
+			<input class="headerSearchText" type="text" name='searched_name' value='' placeholder="Search your friends ...">
+			<input class="headerSearchButton" type="submit" value="">
+		</form>
+		</div>
 <div class="headerMenu">
 <ul><li><a href="{% url 'main:profile' %}">Profile</a></li>
 <li><a href="{% url 'main:Your_Wall' user.username %}">Your Wall</a></li>
@@ -36,7 +39,7 @@ Topics
 </div>
 <div class="profile">
 <div class="left">
-<div class="profilePicture"></div>
+<div class="profilePicture"><img src="{{user.profile.photo.url}}" width="200px" height="200px"></div>
 <div class="changeProfilePicture"><input type="file" name='picture'  title="Change your profile picture"></div>
 <div class="followPanel">
 <div class="follower"><a href="{% url 'main:following' %}">0 follower</a></div>

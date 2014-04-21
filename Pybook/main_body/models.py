@@ -15,6 +15,7 @@ class Post(models.Model):
     topic=models.ForeignKey(Topic,related_name='post')
     content=models.TextField()
     likes=models.IntegerField(default=0)
+    liker=models.ManyToManyField(User,blank=True,null=True,related_name='post_like')
     def __unicode__(self):
         return self.pub_date.strftime("%I:%M%p on %B %d, %Y")
     

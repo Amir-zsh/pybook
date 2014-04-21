@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login,logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.views import generic
@@ -9,6 +9,9 @@ from mail_validity import valid_mail
 # from django.template import RequestContext, loader
 
 def log_in_view(request):
+    user=request.user
+    if user:
+        logout(request)
     context = {}
     return render(request,'log_in/login.html',context)
 
@@ -32,10 +35,6 @@ def user_sign_up(request):
     gender=request.POST['Gender']
     if not user_name or not email or not password:
         return render(request, 'log_in/login.html', {'error_message': "please complete required fields.",})
-
-    if email:
-        if vali_mail(email)==False:
-            return render(request, 'log_in/login.html', {'error_message': "please enter a valid mail(Only letters, numbers, underscores, and one dot (.) are allowed)",})
     
         
     try:
@@ -51,7 +50,10 @@ def user_sign_up(request):
     
     return HttpResponseRedirect(reverse('main:profile',))
     
-    
+def intro_view(request):
+        
+    context = {}
+    return render(request,'log_in/introduction.html',context)
     
     
 

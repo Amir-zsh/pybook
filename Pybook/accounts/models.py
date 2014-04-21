@@ -9,8 +9,10 @@ class UserProfile(models.Model):
 	last_name=models.CharField(blank=True,max_length=30)
 	birth_day= models.DateTimeField(blank=True,null=True)
 	following=models.ManyToManyField(User,related_name='follower')
-	photo=models.ImageField(blank=True,null=True,upload_to='photos')
+	photo=models.ImageField(null=True,upload_to='photos',default='photos/defaultProfilePicture.png')
 	status=models.TextField(blank=True)
 	country=models.CharField(blank=True,max_length=30)
+	liker=models.ManyToManyField(User,blank=True,null=True)
+	
 	def __unicode__(self):
 		return self.user.username
