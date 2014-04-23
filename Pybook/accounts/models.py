@@ -12,7 +12,6 @@ class UserProfile(models.Model):
 	photo=models.ImageField(null=True,upload_to='photos',default='photos/defaultProfilePicture.png')
 	status=models.TextField(blank=True)
 	country=models.CharField(blank=True,max_length=30)
-	liker=models.ManyToManyField(User,blank=True,null=True)
 	
 	def __unicode__(self):
 		return self.user.username

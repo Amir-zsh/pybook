@@ -40,10 +40,9 @@ Topics
 <div class="profile">
 <div class="left">
 <div class="profilePicture"><img src="{{user.profile.photo.url}}" width="200px" height="200px"></div>
-<div class="changeProfilePicture"><input type="file" name='picture'  title="Change your profile picture"></div>
 <div class="followPanel">
-<div class="follower"><a href="{% url 'main:following' %}">0 follower</a></div>
-<div class="following"><a href="{% url 'main:following' %}">0 following</a></div>
+<div class="follower"><a href="{% url 'main:following' %}">{{user.profile.follower.all|length}} follower</a></div>
+<div class="following"><a href="{% url 'main:following' %}">{{user.profile.following.all|length}} following</a></div>
 </div>
 </div>
 <div class="right">

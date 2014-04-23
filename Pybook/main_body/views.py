@@ -53,7 +53,7 @@ def message_view(reques):
         return HttpResponseRedirect(reverse('index:login', ))
 
 def submit_changes(request):
-    password=request.POST['new_password']
+#     password=request.POST['new_password']
     email=request.POST['email']
     first_name=request.POST['first_name']
     last_name=request.POST['last_name']
@@ -71,8 +71,8 @@ def submit_changes(request):
             current_user.save()
             
         
-    if password:
-        current_user.set_password(password)
+#     if password:
+#         current_user.set_password(password)
     if email:
         current_user.email=email
     if first_name:
