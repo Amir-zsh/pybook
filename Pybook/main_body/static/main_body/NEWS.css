@@ -1,0 +1,127 @@
+@charset "utf-8";
+/* CSS Document */
+.innerContent{
+	width: 69.5%;
+	height: auto;
+	margine: 0;
+	padding: 0;
+	float: left;
+}
+.postsAndComments{
+	width: 100%;
+	height: auto;
+	float: left;
+	margin: 10px;
+	overflow: hidden;
+}
+.post{
+	width: 97%;
+	height: auto;
+	border-radius: 10px;
+	background-color: #333;
+	opacity: 0.7;
+	padding: 5px 1.5% 5px 1.5%;
+	overflow: auto;
+}
+.comment{
+	width: 100%;
+	height: auto;
+}
+.enterComment , .viewComment{
+	width: 90%;
+	padding: 5px 2.5% 5px 2.5%;
+	height: auto;
+	margin: 2px 2.5% 0 2.5%;
+	opacity: 0.5;
+	border-radius: 5px;
+	overflow: auto;
+	background-color: #333;
+}
+.viewComment .ProfilePictureForCm{
+	width: 25px;
+	height: 25px;
+	float: left;
+}
+.post .ProfilePicture{
+	width: 50px;
+	height: 50px;
+	float: left;
+}
+.post .postHeader{
+	width: 80%;
+	height: auto;
+	float: left;
+	padding: 10px;
+	margin-left: 10px;
+	font-size: 12px;
+}
+.viewComment .commentHeader{
+	width: 80%;
+	height: auto;
+	float: left;
+	padding: 5px;
+	margin-left: 5px;
+	font-size:10px;
+}
+.viewComment .commentHeader li{
+	display: inline-block;
+	padding-right: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+	
+.post .postHeader li{
+	display: inline-block;
+	padding-right: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.post .postHeader ul , .viewComment .commentHeader ul{
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+.viewComment .commentContent{
+	width: 100%;
+	height: auto;
+	padding: 0;
+	float: left;
+	border-top: 1px #FFFFFF solid;
+	font-size: 12px;
+}
+.post .postContent{
+	width: 100%;
+	height: auto;
+	padding: 0;
+	float: left;
+	border-bottom: 1px #FFFFFF solid;
+	border-top: 1px #FFFFFF solid;
+}
+.post .postFooter{
+	width: 100%;
+	height: auto;
+	padding: 5px;
+	float: left;
+	font-size: 12px;
+}
+.post .postFooter ul{
+	display: block;
+	padding: 0;
+	margin: 0;
+	overflow: auto;
+}
+.post .postFooter li{
+	display: inline-block;
+	padding-right: 0px;
+}
+button.Footer{
+	background: none;
+	border: none;
+}
+img.LikeButton,img.CommentButton{
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+}
+
+

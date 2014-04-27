@@ -1,0 +1,96 @@
+<!doctype html>
+{% load staticfiles %}
+<html>
+<head>
+<meta charset="utf-8">
+<title>|pb| Topic's Name</title>
+<link rel="shortcut icon" href="{% static 'log_in/images/Logo.gif'%}">
+<link rel="stylesheet" type="text/css" href="{% static 'log_in/mainFrame.css'%}">
+<link rel="stylesheet" type="text/css" href="{% static 'log_in/Topic.css'%}">
+</head>
+
+<body>
+<div class="container">
+	<div class="header">
+		<img class="logo" src="{% static 'log_in/images/Logo.gif'%}">
+		<form action="{% url 'main:search' %}" method="post">
+		{% csrf_token %}
+		<div class="headerSearch">
+			<input class="headerSearchText" type="text" name='searched_name' value='' placeholder="Search your friends ...">
+			<input class="headerSearchButton" type="submit" value="">
+		</form>
+		</div>
+		<div class="headerMenu">
+			<ul><li><a href="{% url 'main:profile' %}">Profile</a></li>
+			<li><a href="{% url 'main:Your_Wall' user.username %}">Your Wall</a></li>
+			<li><a href="{% url 'main:Message' %}">Message</a></li>
+			<li><a href="{% url 'main:News' %}">News</a></li>
+			<li><a href="{% url 'main:topics' %}">Topics</a></li>
+			<li><a href="{% url 'log_out' %}">Log Out</a></li></ul>
+		</div>
+	</div>
+    <div class="content">
+        <div class="topicsMenu">
+            Topics
+            <ul><a href="{% url 'main:topic' 'Basic' %}"><li>Basic</li></a>
+            <a href="{% url 'main:topic' 'Django' %}"><li>django</li></a>
+            <a href="{% url 'main:topic' 'Pygame' %}"><li>pygame</li></a>
+            <a href="{% url 'main:topic' 'Multi_Threading' %}"><li>Multi Threading</li></ul></a>
+        </div>
+        <div class="innerContent">
+        	<div class="TopicName">{{topic.subject}}
+            </div>
+ 	    <form action="{% url 'main:send_post' topic.id %}" method="post">
+	    {% csrf_token %}
+            <div class="writePost">Write Your Post :<br>
+            	<textarea cols="70" rows="5" name='content' value="salam" placeholder="write your post here ..."  style="resize: none; width:95%; padding-bottom: 5px;">{{content}}</textarea>
+                <input type="submit" value="Post">
+            </form>
+            </div>
+	{% for post in posts%}
+            <div class="postsAndComments">
+            	<div class="post">
+                	<div class="ProfilePicture"><img src="{{post.author.profile.photo.url}}" width="50px" height="50px"></div>
+                    <div class="postHeader"><ul><li>Written by:{{post.author}}</li>
+                                                <li>Date: {{post.pub_date}}</li>
+                                                <li>Topic: {{post.topic.subject}}</li></ul>
+                    </div>
+                    <div class="postContent">{{post.content}}
+                    </div>
+                    <div class="postFooter"><ul><li>
+                    <form action="{% url 'main:like' post.id %}" method="post">
+		              {% csrf_token %}
+                        <button class="Footer" type="submit" value=""><img src="{% static 'log_in/images/Star.png'%}" class="LikeButton" title="Like"></button >{{post.likes}}</li></form>
+                                                <li><button class="Footer" type="submit" value=""><img src="{% static 'main_body/images/Comment.gif'%}" class="CommentButton" title="Comment"></button>{{ post.comment.all|length }}</li>
+                    </ul></div>
+                </div>
+		<form action="{% url 'main:comment' post.id %}" method="post">
+		{% csrf_token %}
+                <div class="comment">
+                	<div class="enterComment">Enter Comment :&nbsp;<input type="text" name='comment' size="62" value="" placeholder="Comment" style=" padding-right: 3px;"><input type="submit" name='send_comment' value="comment"></div>
+		</form>
+		    {%for comment in post.comment.all%}
+                    <div class="viewComment">
+                    <div class="ProfilePictureForCm"><img src="{{user.profile.photo.url}}" width="25px" height="25px"></div>
+                    <div class="commentHeader"><ul><li>Name:{{comment.author}}</li>
+                                                   <li>Date & time:{{comment.pub_date}}</li></ul>
+                    </div>
+                    <div class="commentContent">{{comment.content}}</div>
+                </div>
+{%endfor%}
+            </div>	
+	</div>
+{%endfor%}
+        </div>
+        <div class="sidebar">
+            <a href="{% url 'main:profile' %}" title="Profile"><img src="{% static 'log_in/images/profile.png'%}"></a>
+            <a href="{% url 'main:Your_Wall' user.username %}" title="Your Wall"><img src="{% static 'log_in/images/wall.png'%}"></a>
+            <a href="{% url 'main:Message' %}" title="Message"><img src="{% static 'log_in/images/message.png'%}"></a>
+            <a href="{% url 'main:News' %}" title="News"><img src="{% static 'log_in/images/News.png'%}"></a>
+            <a href="{% url 'main:topics' %}" title="Topics"><img src="{% static 'log_in/images/topics.png'%}"></a>
+            <a href="{% url 'log_out' %}" title="Log Out"><img src="{% static 'log_in/images/logout.png'%}"></a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+{%load staticfiles %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>|pb| Topics</title>
+<link rel="shortcut icon" href="{% static 'main_body/images/Logo.gif'%}">
+<link rel="stylesheet" type="text/css" href="{% static 'main_body/TopicsMenu.css'%}">
+</head>
+
+<body>
+<div class="container">
+	<div class="header">
+		<img class="logo" src="{% static 'main_body/images/Logo.gif'%}">
+		<div class="headerSearch">
+			<input class="headerSearchButton" type="submit" value="">
+			<input class="headerSearchText" type="text" placeholder="Search your friends ...">
+		</div>
+		<div class="headerMenu">
+			<ul><li><a href="{% url 'main:profile' %}">Profile</a></li>
+			<li><a href="{% url 'main:Your_Wall' user.username %}">Your Wall</a></li>
+			<li><a href="{% url 'main:Message' %}">Message</a></li>
+			<li><a href="{% url 'main:News' %}">News</a></li>
+			<li><a href="{% url 'main:topics' %}">Topics</a></li>
+			<li><a href="{% url 'log_out' %}">Log Out</a></li></ul>
+		</div>
+	</div>
+    <div class="content">
+        <div class="topicsMenu">
+            Topics
+            <ul><a href="{% url 'main:topic' 'Basic' %}"><li><h3>Basic</h3><br>Python is powerful... and fast; 
+plays well with others; 
+runs everywhere; 
+is friendly & easy to learn; 
+is Open.</li></a>
+            <a href="{% url 'main:topic' 'Django' %}"><li><h4>django</h4><br>Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design.</li></a>
+            <a href="{% url 'main:topic' 'Pygame' %}"><li><h4>pygame</h4><br>Pygame is a set of Python modules designed for writing games. Pygame adds functionality on top of the excellent SDL library. This allows you to create fully featured games and multimedia programs in the python language. Pygame is highly portable and runs on nearly every platform and operating system.</li></a>
+            <a href="{% url 'main:topic' 'Multi_Threading' %}"><li><h4>Multi Threading</h4>Running several threads is similar to running several different programs concurrently, but with two benefits: Multiple threads within a process share the same data space with the main thread and can therefore share information or communicate with each other more easily than if they were separate processes and Threads sometimes called light-weight processes and they do not require much memory overhead; they care cheaper than processes.</li></ul></a>
+        </div>
+<div class="sidebar">
+<a href="{% url 'main:profile' %}" title="Profile"><img src="{% static 'log_in/images/profile.png'%}"></a>
+<a href="{% url 'main:Your_Wall' user.username %}" title="Your Wall"><img src="{% static 'log_in/images/wall.png'%}"></a>
+<a href="{% url 'main:Message' %}" title="Message"><img src="{% static 'log_in/images/message.png'%}"></a>
+<a href="{% url 'main:News' %}" title="News"><img src="{% static 'log_in/images/News.png'%}"></a>
+<a href="{% url 'main:topics' %}" title="Topics"><img src="{% static 'log_in/images/topics.png'%}"></a>
+<a href="{% url 'log_out' %}" title="Log Out"><img src="{% static 'log_in/images/logout.png'%}"></a>
+</div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+{% load staticfiles %}
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<html>
+<head>
+<meta charset="utf-8">
+<title>|pb| LogIn or SignUp</title>
+<link rel="shortcut icon" href="{% static 'log_in/images/Logo.gif' %}">
+<style type="text/css" media="screen" >
+body{
+	background-color: #333;
+}
+.container{
+	width: 100px;;
+	height: auto;
+}
+.header{
+	width: 1000px;
+	height: 140px;
+	background-image:url("% static 'log_in/images/Header.gif' %");
+	background-size:100% 140px;
+	float:left;
+}
+.bglogin{
+	width:1000px;
+	height:860px;
+	background-image:url({"% static 'log_in/images/bgLogin.gif' %"});
+	background-size: 100% 860px;
+	float:left;
+}
+.loginForm{
+	width:450px;
+	height: 200px;
+	float:right;
+}
+p.login,p.su{
+	font-family:Georgia, "Times New Roman", Times, serif;
+	color:#FFF;
+	font-size: 20px;
+}
+.empty{
+	width:1000px;
+	height: 200px;
+	float:left;
+}
+.empty2{
+	width: 500px;
+	height: 200px;
+	float: left;
+}
+div.signup{
+	width:450px;
+	height: 45px;
+	float:right;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+<div class="header">
+</div>
+<div class="bglogin">
+<div class="empty"></div>
+<div class="empty2"></div>
+<div class="loginForm">
+<p class="login">If you are a member,login!</p>
+<p class="login">Username: <input name="memberUsername" type="text" id="memberUsername" onClick=value="" value="Username" size="20" maxlength="30"></p>
+<p class="login">Password: <input name="memberPasword" type="password" id="memberPasword" onClick=value="" value="password" size="20" maxlength="30"></p>
+<p class="login"><input type="submit" value="Log In" name="LogIn"></p></div>
+<div class="empty2"></div>
+<div class="signup">
+<p class="su">Sign Up</p>
+<form action="{% url 'index:sign_up' %}" method="post">
+{% csrf_token %}
+<p class="su">Name: <input name="name" type="text" id="name" onClick=value="" value="Name" size="20" maxlength="30"></p>
+<p class="su">Password: <input name="new_password" type="password" id="password" onClick=value="" value="password"></p>
+<p class="su">Username: <input name="new_username" type="text" id="username" onClick=value="" value="username"></p>
+<p class="su">Email: <input name="email" type="text" id="email" onClick=value="" value="email@site.com"></p>
+<p class="su">Gender: <input type="radio" name="Gender" value="Male" checked>Male <input type="radio" name="Gender" value="Female">Female</p>
+<p class="su"><input type="submit" value="Sign Up" name="SignUp"></p></div>
+</form>
+</div>
+</div>
+</body>
+</html>

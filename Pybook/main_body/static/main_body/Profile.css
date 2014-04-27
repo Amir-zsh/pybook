@@ -1,0 +1,79 @@
+{% load staticfiles %}
+@charset "utf-8";
+/* CSS Document */
+.profile{
+	width:69.5%;
+	height: auto;
+	background-color:#333;
+	opacity: 0.7;
+	float: left;
+	border-radius: 10px;
+	margin: 0px 10px 10px 10px;
+}
+.left{
+	width: 40%;
+	height: auto;
+	float:left;
+	margin: 10px;
+}
+.profilePicture{
+	width: 200px;
+	height: 200px;
+	border-radius: 10px;
+	border-bottom: #FFF 2px solid;
+	border-top: #FFF 2px solid;
+}
+.changeProfilePicture{
+	width: auto;
+	height: auto;
+	overflow: hidden;
+}
+.followPanel{
+	width: 100%;
+	height: auto;
+	float: left;
+	margin: 10px 0px 10px 0px;
+	}
+.follower{
+	width : 48%;
+	height: auto;
+	padding: 5px 0px 5px 0px;
+	text-align: center;
+	float: left;
+	border-bottom-left-radius: 10px;
+	border-top-left-radius: 10px;
+	border-bottom: 2px #FFFFFF solid;
+	border-top: 2px #FFFFFF solid;
+	border-right: 2px #FFFFFF solid;
+}
+.following{
+	width: 48%;
+	height: auto;
+	padding: 5px 0px 5px 0px;
+	text-align: center;
+	float: right;
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom: 2px #FFFFFF solid;
+	border-top: 2px #FFFFFF solid;
+	border-left: 2px #FFFFFF solid;
+}
+.follower:hover , .following:hover{
+	border-color: #FC0;
+}
+.follower a , .following a{
+	color: #FFF;
+	text-decoration: none;
+}
+.right{
+	width: 50%;
+	height: auto;
+	float: right;
+	margin: 10px;
+	padding: 10px;
+	border-radius: 10px;
+	border-bottom: #FFF 2px solid;
+	border-top: #FFF 2px solid;
+	overflow: auto;
+}
+
