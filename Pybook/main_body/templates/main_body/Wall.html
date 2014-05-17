@@ -2,6 +2,13 @@
 <!doctype html>
 <html>
 <head>
+<script>
+    var image=document.getElementById('
+
+    function change_picture(){
+        Dajaxice.examples.change_pic(Dajax.process)
+    }
+</script>
 <meta charset="utf-8">
 <title>|pb| Name's Wall</title>
 <link rel="shortcut icon" href="{% static 'main_body/images/Logo.gif'%}">
@@ -23,7 +30,7 @@
 		</div>
 		<div class="headerMenu">
 		<ul><li><a href="{% url 'main:profile' %}">Profile</a></li>
-		<li><a href="{% url 'main:Your_Wall' user.username %}">Your Wall</a></li>
+		<li><a href="{% url 'main:Your_Wall' current_user.username %}">Your Wall</a></li>
 		<li><a href="{% url 'main:Message' %}">Message</a></li>
 		<li><a href="{% url 'main:News' %}">News</a></li>
 		<li><a href="{% url 'main:topics' %}">Topics</a></li>
@@ -44,7 +51,7 @@
 				<div class="profilePicture"><img src="{{user.profile.photo.url}}" width="200px" height="200px">
        			</div>
                 <div class="followPanel">
-                	<div class="follower"><a href="{% url 'main:following'%}">{{user.profile.follower.all|length}} follower</a></div>
+                	<div class="follower"><a href="{% url 'main:following'%}">{{user.follower.all|length}} follower</a></div>
                     <div class="following"><a href="{% url 'main:following'%}">{{user.profile.following.all|length}} following</a></div>
                 </div>
                 {% if user not in current_user.profile.following.all and user != current_user%}
@@ -57,7 +64,7 @@
             <div class="right">
             <p style=" font-size:36px;">First Name:{{user.profile.first_name}}</p>
    	    <p style=" font-size:36px;">Last Name:{{user.profile.last_name}}</p>
-            <p style="font-size:16px;">BirthDate :{{user.profile.birth_day}}<br>
+            <p style="font-size:16px;">BirthDate :{{user.profile.birth_day.date}}<br>
             Email :{{user.email}}<br>
             Country :{{user.profile.country}}<br>
             Bio :{{user.profile.status}}<br>
@@ -101,7 +108,7 @@
  
 	<div class="sidebar">
 	<a href="{% url 'main:profile' %}" title="Profile"><img src="{% static 'log_in/images/profile.png'%}"></a>
-	<a href="{% url 'main:Your_Wall' user.username %}" title="Your Wall"><img src="{% static 'log_in/images/wall.png'%}"></a>
+	<a href="{% url 'main:Your_Wall' current_user.username %}" title="Your Wall"><img src="{% static 'log_in/images/wall.png'%}"></a>
 	<a href="{% url 'main:Message' %}" title="Message"><img src="{% static 'log_in/images/message.png'%}"></a>
 	<a href="{% url 'main:News' %}" title="News"><img src="{% static 'log_in/images/News.png'%}"></a>
 	<a href="{% url 'main:topics' %}" title="Topics"><img src="{% static 'log_in/images/topics.png'%}"></a>
